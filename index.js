@@ -1,6 +1,6 @@
 
 // index.js
-
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -49,7 +49,8 @@ const Subcategory = mongoose.model('Subcategory', subcategorySchema);
 // Routes
 app.get("/", async (req, res) => {
   try{
-      res.status(201).json({ message: 'App running successfully' });
+        res.sendFile(path.join(__dirname,'templates','index.html'));
+      // res.status(201).json({ message: 'App running successfully' });
   }catch(err){
       res.status(500).json({ error: 'Internal Server Error' });
   }
