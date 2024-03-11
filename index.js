@@ -16,7 +16,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // Set up Mongoose and define schema
-const MONGO_URI = "mongodb+srv://user10:password10@cluster0.pdgx6ns.mongodb.net/MenuDb?retryWrites=true&w=majority"
+const MONGO_URI = "mongodb+srv://datasalt11:data7879069987salt@datasaltbusiness.pk26uu2.mongodb.net/MaaBaglaMukhi?retryWrites=true&w=majority&appName=DatasaltBusiness"
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 const Schema = mongoose.Schema;
