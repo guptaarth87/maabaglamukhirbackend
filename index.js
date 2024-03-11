@@ -161,13 +161,14 @@ app.post('/addcategory',upload.single('image'),async (req,res)=>{
  
   try{
    
-    const {category_name } = req.body;
+    const {category_name , tagline } = req.body;
      // Save image to MongoDB (you can also save it to a storage service like AWS S3)
      const imageBuffer = req.file.buffer;
      const imageUrl = `data:image/png;base64,${imageBuffer.toString('base64')}`;
-     console.log("add category block")
+    
      // Save Menu data to MongoDB
      const newCategory = new Category({ category_name,tagline, imageUrl });
+     console.log("add category block")
      await newCategory.save();
  
     res.status(201).json({ message: 'Category added successfully' });
